@@ -10,7 +10,7 @@ const seasonConfig = {
     text: 'Brrr, it is chilly',
     iconName: 'snowflake'
   }
-}
+};
 
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
@@ -22,8 +22,6 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = props => {
   const season = getSeason(props.lat, new Date().getMonth());
-  // const text = season === 'Winter' ? 'Brrr, it is chilly' : 'Lets hit the beach';
-  // const icon = season === 'Winter' ? 'snowflake' : 'sun';
   const { text, iconName } = seasonConfig[season]
 
   return ( 
@@ -32,7 +30,7 @@ const SeasonDisplay = props => {
       <h1>{text}</h1>
       <i className={`icon-right massive ${iconName} icon`} />
     </div>
-  )
+  );
 };
 
 export default SeasonDisplay;
